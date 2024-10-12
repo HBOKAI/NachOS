@@ -48,4 +48,22 @@ class Scheduler {
     					// by the next thread that runs
 };
 
+class sleepFunc{
+	public:
+		sleepFunc():currentINT(0){};
+		void napTime(Thread *t, int x);
+		bool wakeup();
+		bool isEmpty();
+	private:
+		class sleep_T{
+			public:
+				sleep_T(Thread *t, int x):sleepThread(t), when(x) {};
+				Thread* sleepThread;
+				int when;
+		};
+		int currentINT;
+		std::list<sleep_T> T_list;
+};
+
+
 #endif // SCHEDULER_H
