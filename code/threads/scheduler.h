@@ -12,6 +12,7 @@
 #include "copyright.h"
 #include "list.h"
 #include "thread.h"
+#include <list>
 
 // The following class defines the scheduler/dispatcher abstraction -- 
 // the data structures and operations needed to keep track of which 
@@ -52,7 +53,7 @@ class sleepFunc{
 	public:
 		sleepFunc():currentINT(0){};
 		void napTime(Thread *t, int x);
-		bool wakeup();
+		bool wakeUp();
 		bool isEmpty();
 	private:
 		class sleep_T{
